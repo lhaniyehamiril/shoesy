@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@font-face {
+  font-family: wild;
+  src: url("./fonts/WildRangerDemoRegular.ttf");
+}
+@font-face {
+  font-family: nunito;
+  src: url("./fonts/Nunito-Regular.ttf");
+}
+
+@theme {
+  --color-gray-primary: #333;
+  --color-purple: #c387ff;
+
+  --breakpoint-md: 59.3rem;
+
+  --font-wild: wild;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+  margin: 0.66rem;
+  font-family: nunito;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-pagination {
+  z-index: 1000 !important;
+  transform: translateY(-1rem) !important;
+}
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  transition: 0.3s ease-in-out;
+  margin-right: 0 !important;
+  background-color: #feb3ff5d !important;
+  opacity: 0.8 !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-purple) !important;
+  opacity: 1;
+  width: 1.5rem !important;
+  height: 0.75rem !important;
+  border-radius: 1rem !important;
+}
+
+/* scroll main */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 2rem 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-primary);
+  border-radius: 2rem;
+}
+
+/* custom scroll */
+.custom-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #bababaa1;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  margin: 3rem 3rem;
+}
+
+.scroll-hidden::-webkit-scrollbar-thumb {
+  background: transparent;
+}

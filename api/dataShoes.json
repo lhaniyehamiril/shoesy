@@ -1,0 +1,195 @@
+{
+  "shoes": [
+    {
+      "id": 1,
+      "brand": "Nike",
+      "name": "Air Force",
+      "images": {
+        "main": "https://i.postimg.cc/zXKd23Hz/main-nike-air-force.webp",
+        "top": "https://i.postimg.cc/bwRm8MR4/top-nike-air-force.webp",
+        "under": "https://i.postimg.cc/qvr1P028/under-nike-air-force.webp"
+      },
+      "description": "Crisp leather and ultimate wearability Yeah, it's everything you love and more.",
+      "sizes": [5, 7, 8.5, 9, 10.5],
+      "color": ["#6274fb", "#000", "#7acc80", "#ffff"],
+      "mainColor": "#ffff",
+      "price": 115,
+      "discount": 0
+    },
+    {
+      "id": 2,
+      "brand": "Nike",
+      "name": "Jordan4 Retro",
+      "images": {
+        "main": "https://i.postimg.cc/d0K5KFd2/main-under-air-jordan4-retro.webp",
+        "top": "https://i.postimg.cc/pTWkpBsy/top-under-air-jordan4-retro.webp",
+        "under": "https://i.postimg.cc/pdYqWSYg/under-under-air-jordan4-retro.webp"
+      },
+      "description": "Velvety nubuck and smooth leather keep these premium.",
+      "sizes": [8, 9, 10, 11, 12],
+      "color": ["#7cffe3", "#ecd39a", "#d0ffba"],
+      "mainColor": "#d0ffba",
+      "price": 215,
+      "discount": 8
+    },
+    {
+      "id": 3,
+      "brand": "Nike",
+      "name": "Air Max90",
+      "images": {
+        "main": "https://i.postimg.cc/pTmCfdtt/main-air-max-90.webp",
+        "top": "https://i.postimg.cc/3RzBnHK0/top-air-max-90.webp",
+        "under": "https://i.postimg.cc/Gp7zTyVQ/under-air-max-90.webp"
+      },
+      "description": "Revolutionized through collabs and celebrated through rare colorways.",
+      "sizes": [6.5, 7, 9, 10, 11.5],
+      "color": ["#f3e472", "#f3a872", "#73a35d"],
+      "mainColor": "#73a35d",
+      "price": 130,
+      "discount": 0
+    },
+    {
+      "id": 4,
+      "brand": "Nike",
+      "name": "Jumpman MVP",
+      "images": {
+        "main": "https://i.postimg.cc/kgwvLSJm/main-jumpman-mvp.webp",
+        "top": "https://i.postimg.cc/W43wV4zJ/top-jumpman-mvp.webp",
+        "under": "https://i.postimg.cc/L8mVyDMD/under-jumpman-mvp.webp"
+      },
+      "description": "These sneakers honor one legacy while encouraging you to cement your own.",
+      "sizes": [7.5, 8, 10, 11],
+      "color": ["pink", "#ffff", "#2b406f"],
+      "mainColor": "#2b406f",
+      "price": 165,
+      "discount": 5
+    },
+    {
+      "id": 5,
+      "brand": "Balenciaga",
+      "name": "Run Sneaker",
+      "images": {
+        "main": "https://i.postimg.cc/5NkstGYr/main-balenciaga-runner-sneaker.webp",
+        "top": "https://i.postimg.cc/mgvVYHSN/top-balenciaga-runner-sneaker.webp",
+        "under": "https://i.postimg.cc/T3LC59n3/under-balenciaga-runner-sneaker.webp"
+      },
+      "description": "Nylon and suede-like fabric, worn-out effect.",
+      "sizes": [7, 9, 10.5, 11],
+      "color": ["#56a4c1", "#000", "#8d4f3e", "#d589a0", "#ffff"],
+      "mainColor": "#ffff",
+      "price": 1190,
+      "discount": 10
+    },
+    {
+      "id": 6,
+      "brand": "Converse",
+      "name": "Chuck Taylor",
+      "images": {
+        "main": "https://i.postimg.cc/Jh30pfjY/main-chuck-taylor-all-star.webp",
+        "top": "https://i.postimg.cc/rmQmk5nS/top-chuck-taylor-all-star.webp"
+      },
+      "description": "EVA foam for a lightweight feel, elevated platform for added height.",
+      "sizes": [6, 7, 10, 11],
+      "color": ["#84334b", "#000", "#eee", "#ffd5a1"],
+      "mainColor": "#ffd5a1",
+      "price": 100,
+      "discount": 0
+    },
+    {
+      "id": 7,
+      "brand": "Converse",
+      "name": "Run Star",
+      "images": {
+        "main": "https://i.postimg.cc/rwXq7hVB/main-run-start.webp",
+        "top": "https://i.postimg.cc/g2VGpvrn/top-run-star.webp",
+        "under": "https://i.postimg.cc/65G9jsXV/under-run-start.webp"
+      },
+      "description": "Lightly padded footbed for optimal comfort.",
+      "sizes": [6, 7.5, 8, 10],
+      "color": ["#a48f3c", "#fff", "#000"],
+      "mainColor": "#000",
+      "price": 130,
+      "discount": 0
+    },
+    {
+      "id": 8,
+      "brand": "Converse",
+      "name": "UNDEFEATED",
+      "images": {
+        "main": "https://i.postimg.cc/g0BztGnD/main-Converse-x-undefeated.webp",
+        "top": "https://i.postimg.cc/SsByqVLY/top-Converse-x-undefeated.webp",
+        "under": "https://i.postimg.cc/6329DFZN/under-Converse-x-undefeated.webp"
+      },
+      "description": "The launch reworks the skate-ready classic with elevated materials.",
+      "sizes": [5, 7, 8.5, 9],
+      "color": ["#54729a", "#fff", "#b05e4d", "#a9793e"],
+      "mainColor": "#a9793e",
+      "price": 110,
+      "discount": 0
+    },
+    {
+      "id": 9,
+      "brand": "Balenciaga",
+      "name": "S Diy Metal",
+      "images": {
+        "main": "https://i.postimg.cc/v8KJhGtX/main-Balenciaga-Triple-S-Sneaker-diy-metal.webp",
+        "top": "https://i.postimg.cc/7YTpQjB4/top-Balenciaga-Triple-S-Sneaker-diy-metal.webp",
+        "under": "https://i.postimg.cc/x1DWrg7z/under-Balenciaga-Triple-S-Sneaker-diy-metal.png"
+      },
+      "description": "DIY metal artwork printed cowskin , 2 laces loops including 1 functional",
+      "sizes": [6, 7.5, 8, 11, 12],
+      "color": ["#98bafe", "#eee", "#000"],
+      "mainColor": "#000",
+      "price": 1250,
+      "discount": 0
+    },
+    {
+      "id": 10,
+      "brand": "Balenciaga",
+      "name": "triple S",
+      "images": {
+        "main": "https://i.postimg.cc/cJMK79qM/main-balenciaga-triple-s-sneaker.webp",
+        "top": "https://i.postimg.cc/W1ZqzpXy/top-balenciaga-triple-s-sneaker.webp",
+        "under": "https://i.postimg.cc/5tMYCcr2/under-balenciaga-triple-s-sneaker.webp"
+      },
+      "description": "Lacing system featuring 12 fabric eyelets , Microfiber and rhinestones",
+      "sizes": [5.5, 6, 7, 8, 11],
+      "color": ["#334f3d", "#ff2bbf", "#fff", "#6d6262"],
+      "mainColor": "#6d6262",
+      "price": 2590,
+      "discount": 8
+    },
+    {
+      "id": 11,
+      "brand": "Converse",
+      "name": "Mega Trainer",
+      "images": {
+        "main": "https://i.postimg.cc/8Cd3s4Vr/main-mega-trainer.webp",
+        "top": "https://i.postimg.cc/3RncFwN8/top-mega-trainer.webp",
+        "under": "https://i.postimg.cc/k41TthYD/under-mega-trainer.webp"
+      },
+      "description": "Star Chevron reps the Converse legacy of sport and street style.",
+      "sizes": [5, 6, 7, 11],
+      "color": ["#9fff3f", "#ffdd78", "#657141", "#ffff"],
+      "mainColor": "#ffff",
+      "price": 110,
+      "discount": 5
+    },
+    {
+      "id": 12,
+      "brand": "Balenciaga",
+      "name": "T Autographe",
+      "images": {
+        "main": "https://i.postimg.cc/xdWCT0nd/main-track-autographe.webp",
+        "top": "https://i.postimg.cc/63nQ8Dpf/top-track-autographe.webp",
+        "under": "https://i.postimg.cc/cCWLwXKy/under-track-autographe.webp"
+      },
+      "description": "Includes 1 additional pair of laces. Made of mesh, polyurethane, and polyester.",
+      "sizes": [7, 8, 9.5, 10],
+      "color": [" #91c1cb", "#000", "#ffff"],
+      "mainColor": "#ffff",
+      "price": 1150,
+      "discount": 0
+    }
+  ]
+}

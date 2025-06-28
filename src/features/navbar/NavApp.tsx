@@ -8,6 +8,7 @@ import { NavItem } from "./NavItem";
 import { House } from "../../icons/House";
 import { Heart } from "../../icons/Heart";
 import { IconCart } from "../../icons/IconCart";
+import { IconAdd } from "../../icons/IconAdd";
 
 export const NavApp = () => {
   const location = useLocation();
@@ -31,6 +32,13 @@ export const NavApp = () => {
               to="/cart"
               currentPath={location.pathname}
               icon={<IconCart width="28" height="28" />}
+            />
+          </li>
+          <li>
+            <NavItem
+              to="/product/add"
+              currentPath={location.pathname}
+              icon={<IconAdd />}
             />
           </li>
           {username && (

@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { HexColorPicker } from "react-colorful";
+import { useColor } from "../../contexts/ColorProvider";
 import { IconPlus } from "../../icons/IconPlus";
+import { Colorful } from "./Colorful";
 type PickerColorProps = {
   colorSelect: string[];
   setColorSelect: React.Dispatch<React.SetStateAction<string[]>>;
@@ -9,31 +9,16 @@ export const PickerColor: React.FC<PickerColorProps> = ({
   colorSelect,
   setColorSelect,
 }) => {
-  const [color, setColor] = useState<string>("#f2a0cb");
-  const [isOpen, setIsOpen] = useState<boolean | null>(null);
-  const pickerColor = useRef<HTMLDivElement | null>(null);
-
+  const { isOpen, setIsOpen, color } = useColor();
   const handleTriggerPicker = () => {
     if (!isOpen) setIsOpen(true);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        pickerColor.current &&
-        !pickerColor.current.contains(e.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("pointerdown", handleClickOutside);
-    return () =>
-      document.removeEventListener("pointerdown", handleClickOutside);
-  }, []);
-
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     setColorSelect((col) => (col.includes(color) ? col : [...col, color]));
+  };
+  const removeColorSelect = (index: number) => {
+    setColorSelect((prv) => prv.filter((_, i) => i !== index));
   };
 
   return (
@@ -66,22 +51,25 @@ export const PickerColor: React.FC<PickerColorProps> = ({
           Add
         </button>
 
-        {isOpen && (
-          <div
-            ref={pickerColor}
-            className="w-0  absolute top-13 min-[290px]:left-5 left-0 mt-2"
-          >
-            <HexColorPicker color={color} onChange={setColor} />
-          </div>
-        )}
+        {isOpen && <Colorful />}
       </div>
       {colorSelect.length > 0 && (
-        <div className="bg-[var(--color-purple)] mt-2 rounded-full p-3 flex gap-3 w-full overflow-x-auto scroll-hidden">
-          {colorSelect?.map((color) => (
-            <span
-              style={{ background: color }}
-              className="inline-block rounded-full w-6 h-6 shrink-0"
-            ></span>
+        <div className="bg-[var(--color-purple)] mt-2 rounded-full p-3 flex gap-2 w-full overflow-x-auto scroll-hidden">
+          {colorSelect?.map((color, index) => (
+            <>
+              <span
+                key={index}
+                style={{ background: color }}
+                className="inline-block rounded-full w-6 h-6 shrink-0"
+              ></span>
+              <button
+                type="button"
+                onClick={() => removeColorSelect(index)}
+                className="text-[var(--color-gray-primary)] font-bold cursor-pointer -translate-x-1"
+              >
+                x
+              </button>
+            </>
           ))}
         </div>
       )}

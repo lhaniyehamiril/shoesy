@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProductRefProvider } from "./contexts/ProductRefProvider";
+import { ColorProvider } from "./contexts/ColorProvider";
 
 import AppLayout from "./pages/AppLayout";
 import { Home } from "./pages/Home";
@@ -26,7 +27,14 @@ const App = () => {
           <Route path="favorite" element={<Favorite />} />
           <Route path="cart" element={<Cart />} />
           <Route path="order" element={<Order />} />
-          <Route path="product/add" element={<AddProduct />} />
+          <Route
+            path="product/add"
+            element={
+              <ColorProvider>
+                <AddProduct />
+              </ColorProvider>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

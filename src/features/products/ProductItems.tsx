@@ -65,7 +65,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             />
           </button>
         </div>
-        <h2 className="text-white  md:px-2 -mt-2 pb-2  whitespace-nowrap rounded-full font-bold text-[11px] md:text-[1rem]">
+        <h2 className="text-white  md:px-2 -mt-2 pb-2  whitespace-nowrap rounded-full text-[11px] md:text-[1rem]">
           {items.name}
         </h2>
       </div>

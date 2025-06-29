@@ -26,7 +26,7 @@ type BoxEmptyIcon = {
 export const EmptyBox: React.FC<BoxEmptyIcon> = ({ icon, message, name }) => {
   return (
     <div
-      className={`text-center font-bold bg-[var(--color-gray-primary)] rounded-3xl ${
+      className={`text-center bg-[var(--color-gray-primary)] rounded-3xl ${
         name ? "px-6" : "w-60 max-[300px]:w-[87%]"
       } p-5  mt-5 text-white flex flex-col justify-center items-center`}
     >

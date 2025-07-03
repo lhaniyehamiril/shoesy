@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProductRefProvider } from "./contexts/ProductRefProvider";
-import { ColorProvider } from "./contexts/ColorProvider";
 
 import AppLayout from "./pages/AppLayout";
 import { Home } from "./pages/Home";
@@ -9,6 +8,7 @@ import { Favorite } from "./pages/Favorite";
 import { Cart } from "./pages/Cart";
 import { Order } from "./pages/Order";
 import { AddProduct } from "./pages/AddProduct";
+import { ProductFormProvider } from "./contexts/ProductFormProvider";
 
 const App = () => {
   return (
@@ -30,9 +30,9 @@ const App = () => {
           <Route
             path="product/add"
             element={
-              <ColorProvider>
+              <ProductFormProvider>
                 <AddProduct />
-              </ColorProvider>
+              </ProductFormProvider>
             }
           />
         </Route>

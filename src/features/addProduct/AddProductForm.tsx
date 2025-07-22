@@ -21,7 +21,8 @@ export const AddProductForm = () => {
           colorSelect={colorSelect}
           setColorSelect={setColorSelect}
         />
-      </form>
+        <ProductImgBox setImages={setImages} images={images} />
+      </div>
     </div>
   );
 };

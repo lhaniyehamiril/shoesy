@@ -67,7 +67,6 @@ export const PickerColor: React.FC<PickerColorProps> = ({
               className="inline-block rounded-full w-6 h-6 shrink-0"
             ></span>
             <button
-              type="button"
               onClick={() => removeColorSelect(index)}
               className="text-[var(--color-gray-primary)] font-bold cursor-pointer -translate-x-1"
             >

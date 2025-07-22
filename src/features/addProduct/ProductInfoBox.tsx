@@ -39,7 +39,7 @@ export const ProductInfoBox = () => {
         placeholder="discount"
         {...register("discount", { required: "please fill it" })}
       />
-      <div className="relative">
+      <div className="relative min-[280px]:w-[10rem] max-[280px]:w-[180%]">
         <ColorBox color={mainColor} title="main color" isOpen={isOpen}>
           {!isOpen && (
             <button

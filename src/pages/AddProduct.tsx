@@ -3,7 +3,7 @@ import { NavApp } from "../features/navbar/NavApp";
 
 export const AddProduct = () => {
   return (
-    <div>
+    <div className="pb-32">
       <NavApp />
       <AddProductForm />
     </div>

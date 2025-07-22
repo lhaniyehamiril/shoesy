@@ -18,7 +18,7 @@ export const ColorBox: React.FC<colorBoxProps> = ({
       <span>{title} : </span>
       {children}
       {isOpen && (
-        <button type="button" className="mt-1">
+        <button className="mt-1">
           <span
             style={{ background: color }}
             className="inline-block rounded-full w-6 h-6"

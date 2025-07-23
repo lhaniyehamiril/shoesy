@@ -21,9 +21,10 @@ export const PickerColor: React.FC<PickerColorProps> = ({
   const [color, setColor] = useState("");
   const pickerColorRef = useRef<HTMLDivElement | null>(null);
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    setColorSelect((col) => (col.includes(color) ? col : [...col, color]));
+  const handleSubmit = () => {
+    if (color.trim()) {
+      setColorSelect((col) => (col.includes(color) ? col : [...col, color]));
+    }
     setIsOpen(false);
   };
 

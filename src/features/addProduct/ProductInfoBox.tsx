@@ -18,7 +18,7 @@ export const ProductInfoBox = () => {
   useClickOutside(pickerColorRef, () => setIsOpen(false));
 
   return (
-    <BlackBox className="grid grid-cols-2 gap-2 w-[90%] min-[400px]:w-[17rem] md:w-[22rem]">
+    <BlackBox className="grid grid-cols-2 gap-2 w-[88%] min-[400px]:w-[17rem] md:w-[17rem]">
       <Input
         type="text"
         placeholder="name"

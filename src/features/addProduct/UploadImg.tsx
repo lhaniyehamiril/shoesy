@@ -42,7 +42,7 @@ export const UploadImg: React.FC<uploadImgProps> = ({
         setTimeout(() => {
           setProgress(0);
           setIsDone(false);
-        }, 2000);
+        }, 1500);
       }, 2200);
     }
   };
@@ -54,7 +54,7 @@ export const UploadImg: React.FC<uploadImgProps> = ({
   return (
     <button
       onClick={handleClick}
-      className="relative h-[4.27rem] w-[4.27rem] rounded-[1.6rem] flex items-center justify-center flex-col shrink-0 overflow-hidden bg-[#b081df]"
+      className="relative h-[4.27rem] w-[4.27rem] max-[400px]:w-[30%] rounded-[1.6rem] flex items-center justify-center flex-col shrink-0 overflow-hidden bg-[var(--color-purple)]"
     >
       {progress >= 1 && isDone === false && <IconCircle progress={progress} />}
 

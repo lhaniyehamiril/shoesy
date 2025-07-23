@@ -13,7 +13,7 @@ export const ProductImgBox: React.FC<productImgBox> = ({
     setImages((prv) => ({ ...prv, [type]: url }));
   };
   return (
-    <div className="w-[90%] min-[400px]:w-[17rem] md:w-[17rem]">
+    <div className="w-[88%] min-[400px]:w-[17rem] md:w-[17rem]">
       <BlackBox>
         <div className="flex gap-3 items-center justify-center">
           <UploadImg text="main" handleImgUpload={handleImgUpload} />
@@ -21,7 +21,7 @@ export const ProductImgBox: React.FC<productImgBox> = ({
           <UploadImg text="under" handleImgUpload={handleImgUpload} />
         </div>
         <div className="flex items-center justify-center ">
-          <div className="w-[90%] md:w-full bg-[var(--color-purple)] rounded-full h-13 mt-3 flex pl-6 items-center gap-2">
+          <div className="w-full bg-[var(--color-purple)] rounded-full h-14 mt-3 flex pl-6 items-center gap-2">
             {images.main && (
               <img
                 src={images.main}

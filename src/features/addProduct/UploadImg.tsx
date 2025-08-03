@@ -22,8 +22,6 @@ export const UploadImg: React.FC<uploadImgProps> = ({
       setProgress(10);
       setIsDone(false);
 
-      const urlImg = URL.createObjectURL(file);
-
       const timer = setInterval(() => {
         setProgress((prev) => {
           if (prev >= 100) {
@@ -34,16 +32,23 @@ export const UploadImg: React.FC<uploadImgProps> = ({
         });
       }, 200);
 
-      setTimeout(() => {
-        handleImgUpload(text, urlImg);
-        setProgress(100);
-        setIsDone(true);
+      const reader = new FileReader();
 
+      reader.onloadend = () => {
+        const base64Img = reader.result as string;
         setTimeout(() => {
-          setProgress(0);
-          setIsDone(false);
-        }, 1500);
-      }, 2200);
+          handleImgUpload(text, base64Img);
+          setProgress(100);
+          setIsDone(true);
+
+          setTimeout(() => {
+            setProgress(0);
+            setIsDone(false);
+          }, 1500);
+        }, 2200);
+      };
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -54,7 +59,7 @@ export const UploadImg: React.FC<uploadImgProps> = ({
   return (
     <button
       onClick={handleClick}
-      className="relative h-[4.27rem] w-[4.27rem] max-[400px]:w-[30%] rounded-[1.6rem] flex items-center justify-center flex-col shrink-0 overflow-hidden bg-[var(--color-purple)]"
+      className="relative h-[4.27rem] w-[4.27rem] max-[640px]:w-[30%] rounded-[1.6rem] flex items-center justify-center flex-col shrink-0 overflow-hidden bg-[var(--color-purple)]"
     >
       {progress >= 1 && isDone === false && <IconCircle progress={progress} />}
 

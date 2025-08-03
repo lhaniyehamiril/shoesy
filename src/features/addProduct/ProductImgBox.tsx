@@ -1,27 +1,56 @@
+import { motion } from "motion/react";
+
 import { BlackBox } from "../../ui/StyleComponents";
 import { imagesType } from "./types";
 import { UploadImg } from "./UploadImg";
+import { variantY } from "../../ui/variantMotion";
+
 type productImgBox = {
   setImages: React.Dispatch<React.SetStateAction<imagesType>>;
   images: imagesType;
+  isSubmit: boolean;
 };
 export const ProductImgBox: React.FC<productImgBox> = ({
   setImages,
   images,
+  isSubmit,
 }) => {
   const handleImgUpload = (type: string, url: string) => {
     setImages((prv) => ({ ...prv, [type]: url }));
   };
   return (
-    <div className="w-[88%] min-[400px]:w-[17rem] md:w-[17rem]">
+    <motion.div
+      variants={variantY}
+      initial="hidden"
+      animate="visible"
+      className="w-[88%] min-[400px]:w-[22rem] min-[640px]:w-[17rem]"
+    >
       <BlackBox>
         <div className="flex gap-3 items-center justify-center">
           <UploadImg text="main" handleImgUpload={handleImgUpload} />
           <UploadImg text="top" handleImgUpload={handleImgUpload} />
           <UploadImg text="under" handleImgUpload={handleImgUpload} />
         </div>
-        <div className="flex items-center justify-center ">
-          <div className="w-full bg-[var(--color-purple)] rounded-full h-14 mt-3 flex pl-6 items-center gap-2">
+        <div className="flex items-center justify-center">
+          <div
+            className={`w-full  ${
+              isSubmit && !images.main
+                ? "justify-center pl-0 bg-[#ff7777]"
+                : "pl-5 bg-[var(--color-purple)]"
+            } 
+                rounded-full h-14 mt-3 flex items-center gap-2`}
+          >
+            {!isSubmit && !images.main && (
+              <span className="text-[11px] sm:text-[12px]">
+                remove the image background <br /> first for best result
+              </span>
+            )}
+
+            {isSubmit && !images.main && (
+              <span className="font-bold  inline-block text-[11px] sm:text-[13px]">
+                upload main image
+              </span>
+            )}
             {images.main && (
               <img
                 src={images.main}
@@ -43,6 +72,6 @@ export const ProductImgBox: React.FC<productImgBox> = ({
           </div>
         </div>
       </BlackBox>
-    </div>
+    </motion.div>
   );
 };

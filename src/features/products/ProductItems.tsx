@@ -2,12 +2,17 @@ import { Link } from "react-router-dom";
 import { easeInOut, motion } from "motion/react";
 import { dataShoes } from "../../services/type";
 
+import { useAppSelector } from "../../hooks/useAppSelector";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
+
+import { user } from "../auth/authSlice";
 import { setProductId } from "./productShoesSlice";
 import { useProductRef } from "../../contexts/ProductRefProvider";
+import { useDeleteShoes } from "./useDeleteShoes";
 
 import { ImgWithLoader } from "../../ui/ImgWithLoader";
 import { FavoriteBtn } from "../../ui/FavoriteBtn";
+import { IconTrash } from "../../icons/IconTrash";
 
 type ProductProps = {
   items: dataShoes;
@@ -25,6 +30,15 @@ const variantLi = {
 export const ProductItems: React.FC<ProductProps> = ({ items }) => {
   const dispatch = useAppDispatch();
   const { setProductRef } = useProductRef();
+  const { mutate } = useDeleteShoes();
+  const owner = useAppSelector(user);
+
+  const handleRemove = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mutate(items.id);
+  };
+
   return (
     <motion.li
       ref={(el) => setProductRef(items.name, el)}
@@ -36,6 +50,16 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       className="max-[287px]:w-full flex items-center justify-center flex-col gap-1"
     >
       <div className="bg-[var(--color-gray-primary)] relative py-2 rounded-[1.3rem] px-4 w-36 max-[287px]:w-[85%] md:w-48 max-[350px]:w-[8.5rem] max-[310px]:w-[7.7rem] max-[505px]:w-[9.5rem]">
+        {owner === "haniyeh" && (
+          <button
+            type="button"
+            className="font-bold text-white cursor-pointer mt-1"
+            onClick={handleRemove}
+          >
+            <IconTrash strokeColor="#c387ff" />
+          </button>
+        )}
+
         <div className="absolute right-3 top-[0.70rem]">
           <FavoriteBtn
             width="23"
@@ -44,12 +68,15 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             productId={items.id}
           />
         </div>
-        <div className="flex items-center justify-center flex-col">
+        <div
+          className={`flex items-center justify-center flex-col ${
+            owner === "haniyeh" && "-mt-5"
+          }`}
+        >
           <Link to={`/product/${items.id}`} className="min-[1190px]:hidden">
             <ImgWithLoader
               src={items.images.main}
               alt={items.name}
-              borderColor="border-[var(--color-purple)]"
               className="w-20 h-22"
             />
           </Link>
@@ -60,7 +87,6 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             <ImgWithLoader
               src={items.images.main}
               alt={items.name}
-              borderColor="border-[var(--color-purple)]"
               className="w-32 h-32"
             />
           </button>
@@ -88,7 +114,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             viewport={{ once: true, amount: 0.3 }}
             className="flex items-center justify-center font-bold text-[10px] w-8 h-5 rounded-full bg-[var(--color-purple)] text-[var(--color-gray-primary)]"
           >
-            <span className=""> {items.discount}%</span>
+            <span> {items.discount}%</span>
           </motion.div>
         ) : (
           ""

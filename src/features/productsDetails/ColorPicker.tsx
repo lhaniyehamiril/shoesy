@@ -31,7 +31,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
         </AnimatePresence>
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex py-3 gap-3 text-white bg-[var(--color-gray-primary)] border-1 border-[var(--color-purple)] px-4 w-full overflow-x-auto custom-scroll rounded-full">
+        <div className="flex items-center h-12 gap-3 text-white bg-[var(--color-gray-primary)] border-1 border-[var(--color-purple)] px-4 w-full overflow-x-auto custom-scroll rounded-full">
           {product?.color?.map((color, index) => (
             <button
               onClick={() => {
@@ -46,6 +46,11 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
               style={{ background: color }}
             ></button>
           ))}
+          {product?.color.length === 0 && (
+            <span className="inline-block text-[15px] text-gray-200">
+              no colors
+            </span>
+          )}
         </div>
       </div>
     </div>

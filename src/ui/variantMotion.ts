@@ -22,3 +22,12 @@ export const variantX = {
   },
   exit: { opacity: 0, scale: 0 },
 };
+
+export const variantXRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    Transition: { duration: 0.3 },
+  },
+};

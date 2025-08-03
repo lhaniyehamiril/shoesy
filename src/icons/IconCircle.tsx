@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { variantScale } from "../ui/variantMotion";
-export const IconCircle = ({ progress }: { progress: number }) => {
+export const IconCircle = ({ progress }: { progress?: number }) => {
   return (
     <motion.svg
       variants={variantScale}
@@ -16,7 +16,6 @@ export const IconCircle = ({ progress }: { progress: number }) => {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       role="img"
-      class="iconify iconify--noto"
       preserveAspectRatio="xMidYMid meet"
     >
       <circle cx="63.93" cy="64" r="60" fill="#303030d8"></circle>

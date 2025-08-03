@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext } from "react";
 import {
+  FieldErrors,
   FieldValue,
   useForm,
   UseFormHandleSubmit,
@@ -11,6 +12,7 @@ type productFormType = {
   register: UseFormRegister<FieldValue>;
   reset: UseFormReset<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues, FieldValue>;
+  errors: FieldErrors<FieldValues>;
 };
 
 const ProductFormContext = createContext<productFormType | undefined>(
@@ -18,9 +20,16 @@ const ProductFormContext = createContext<productFormType | undefined>(
 );
 
 const ProductFormProvider = ({ children }: { children: ReactNode }) => {
-  const { register, reset, handleSubmit } = useForm();
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
-    <ProductFormContext.Provider value={{ register, reset, handleSubmit }}>
+    <ProductFormContext.Provider
+      value={{ register, reset, handleSubmit, errors }}
+    >
       {children}
     </ProductFormContext.Provider>
   );

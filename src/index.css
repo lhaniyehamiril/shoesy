@@ -79,3 +79,7 @@ body {
 .scroll-hidden::-webkit-scrollbar-thumb {
   background: transparent;
 }
+
+.scroll-hidden::-webkit-scrollbar {
+  height: 0;
+}

@@ -4,7 +4,6 @@ import "swiper/css";
 import { Pagination } from "swiper/modules";
 import tw from "tailwind-styled-components";
 
-
 import { dataShoes } from "../../services/type";
 import { ImgWithLoader } from "../../ui/ImgWithLoader";
 type SlideImageProps = {
@@ -37,28 +36,27 @@ export const ImgSlider: React.FC<SlideImageProps> = ({ product }) => {
             <ImgWithLoader
               src={product?.images.main}
               alt={product?.name}
-              borderColor="border-[var(--color-gray-primary)]"
               className="w-60 h-60"
             />
           </ContainerImg>
         </SwiperSlide>
-        <SwiperSlide>
-          <ContainerImg>
-            <ImgWithLoader
-              src={product?.images.top}
-              alt={product?.name}
-              borderColor="border-[var(--color-gray-primary)]"
-              className="w-48 h-48"
-            />
-          </ContainerImg>
-        </SwiperSlide>
+        {product?.images.top && (
+          <SwiperSlide>
+            <ContainerImg>
+              <ImgWithLoader
+                src={product?.images.top}
+                alt={product?.name}
+                className="w-48 h-48"
+              />
+            </ContainerImg>
+          </SwiperSlide>
+        )}
         {product?.images.under && (
           <SwiperSlide>
             <ContainerImg>
               <ImgWithLoader
                 src={product?.images.under}
                 alt={product?.name}
-                borderColor="border-[var(--color-gray-primary)]"
                 className="w-48 h-48"
                 classImg="-mt-1"
               />

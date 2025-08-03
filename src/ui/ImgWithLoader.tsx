@@ -4,7 +4,6 @@ import { Spinner } from "./Spinner";
 type ImgWithLoader = {
   src: string | undefined;
   alt: string | undefined;
-  borderColor: string;
   classImg?: string;
   className: string;
 };
@@ -12,7 +11,6 @@ type ImgWithLoader = {
 export const ImgWithLoader: React.FC<ImgWithLoader> = ({
   src,
   alt,
-  borderColor,
   classImg,
   className,
 }) => {
@@ -21,8 +19,8 @@ export const ImgWithLoader: React.FC<ImgWithLoader> = ({
   return (
     <div className={`relative ${className}`}>
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 -mt-10">
-          <Spinner borderColor={borderColor} />
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <Spinner />
         </div>
       )}
 

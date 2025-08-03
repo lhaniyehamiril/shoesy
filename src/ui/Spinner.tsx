@@ -1,10 +1,12 @@
-type SpinnerProps = {
-  borderColor: string;
-};
-export const Spinner: React.FC<SpinnerProps> = ({ borderColor }) => {
+import { motion } from "motion/react";
+import { IconCircle } from "../icons/IconCircle";
+export const Spinner = () => {
   return (
-    <div
-      className={`w-8 h-8 border-4 border-t-transparent ${borderColor} rounded-full animate-spin mt-9`}
-    ></div>
+    <motion.div
+      animate={{ rotate: "360deg" }}
+      transition={{ repeat: Infinity, duration: 0.9 }}
+    >
+      <IconCircle />
+    </motion.div>
   );
 };

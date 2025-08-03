@@ -15,7 +15,6 @@ export const OrderItems: React.FC<OrderItemsProps> = ({ items }) => {
             src={items.image}
             alt={items.name}
             className="w-16 h-20 shrink-0"
-            borderColor="border-[var(--color-gray-primary)]"
           />
         </div>
       </div>

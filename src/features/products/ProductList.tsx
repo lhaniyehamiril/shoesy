@@ -6,6 +6,7 @@ import { brands } from "./productShoesSlice";
 
 import { Spinner } from "../../ui/Spinner";
 import { ProductItems } from "./ProductItems";
+
 export const ProductList = () => {
   const { shoes, errorShoes, loadingShoes } = useGetDataShoes();
   const selectBrand = useAppSelector(brands);
@@ -14,7 +15,11 @@ export const ProductList = () => {
     : shoes;
 
   if (loadingShoes)
-    return <Spinner borderColor="border-[var(--color-purple)]" />;
+    return (
+      <div className="mt-5">
+        <Spinner />
+      </div>
+    );
   if (errorShoes) return <span>error</span>;
 
   return (

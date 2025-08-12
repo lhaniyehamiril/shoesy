@@ -1,9 +1,12 @@
 import { Input } from "../../ui/StyleComponents";
+import { UseFormRegisterReturn } from "react-hook-form";
+
 type inputInfoProps = {
   errors?: string;
-  register: ReturnType<any>;
+  register: UseFormRegisterReturn;
   placeholder: string;
 };
+
 export const InputInfo: React.FC<inputInfoProps> = ({
   errors,
   register,

@@ -2,23 +2,42 @@ import jsonServer from 'json-server';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// defining __filename , __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// creating json server
 const server = jsonServer.create();
 const router = jsonServer.router(path.join(__dirname, '../api/dataShoes.json'));
 const middlewares = jsonServer.defaults();
 
-// using middleware
+server.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    console.log(`${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`);
+  });
+  next();
+});
+
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
-// defining routs 
-server.use('/api', router);
+server.use((err, req, res, next) => {
+  console.error('Internal server error:', err);
+  res.status(500).json({ error: 'Internal server error' });
+});
 
-// setting up server
+server.use('/api', (req, res, next) => {
+  try {
+    router(req, res, next);
+  } catch (error) {
+    next(error);
+  }
+});
+
+server.use((req, res) => {
+  res.status(404).json({ error: 'Not found' });
+});
+
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

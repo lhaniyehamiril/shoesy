@@ -43,7 +43,7 @@ export const BoxSize: React.FC<BoxSizeProps> = ({
           <Input
             type="text"
             value={size}
-            onChange={(e) => setSize(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSize(e.target.value)}
             placeholder="Size"
             className={`${
               isSubmit && sizeSelect.length === 0

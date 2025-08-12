@@ -6,6 +6,7 @@ type ImgWithLoader = {
   alt: string | undefined;
   classImg?: string;
   className: string;
+  borderColor?: string; // Add borderColor prop
 };
 
 export const ImgWithLoader: React.FC<ImgWithLoader> = ({
@@ -13,6 +14,7 @@ export const ImgWithLoader: React.FC<ImgWithLoader> = ({
   alt,
   classImg,
   className,
+  borderColor, // Destructure borderColor
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +32,7 @@ export const ImgWithLoader: React.FC<ImgWithLoader> = ({
         onLoad={() => setIsLoading(false)}
         className={`object-cover w-full h-full transition-opacity duration-300 ${classImg} ${
           isLoading ? "opacity-0" : "opacity-100"
-        }`}
+        } ${borderColor ? borderColor : ""}`} // Apply borderColor if provided
       />
     </div>
   );

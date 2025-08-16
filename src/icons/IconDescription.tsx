@@ -2,7 +2,7 @@ export const IconDescription = () => {
   return (
     <svg
       className="rotate-20"
-      fill="#c387ff"
+      fill="#d2a4ff"
       width="36px"
       height="36px"
       viewBox="0 0 512 512"

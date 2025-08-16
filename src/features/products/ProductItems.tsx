@@ -47,16 +47,16 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="max-[287px]:w-full flex items-center justify-center flex-col gap-1"
+      className="max-[317px]:w-full flex items-center justify-center flex-col gap-1"
     >
-      <div className="bg-[var(--color-gray-primary)] relative py-2 rounded-[1.3rem] px-4 w-36 max-[287px]:w-[85%] md:w-48 max-[350px]:w-[8.5rem] max-[310px]:w-[7.7rem] max-[505px]:w-[9.5rem]">
+      <div className="bg-[var(--color-gray-primary)] relative py-2 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
         {owner === "haniyeh" && (
           <button
             type="button"
             className="font-bold text-white cursor-pointer mt-1"
             onClick={handleRemove}
           >
-            <IconTrash strokeColor="#c387ff" />
+            <IconTrash strokeColor="#d2a4ff" />
           </button>
         )}
 
@@ -77,7 +77,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             <ImgWithLoader
               src={items.images.main}
               alt={items.name}
-              className="w-20 h-22"
+              className="w-26 h-26"
             />
           </Link>
           <button
@@ -96,7 +96,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
         </h2>
       </div>
       <div
-        className={` bg-[var(--color-gray-primary)] text-white  py-[0.65rem] rounded-full w-[93%] max-[287px]:w-[83%] ${
+        className={` bg-[var(--color-gray-primary)] text-white py-[0.65rem] rounded-full w-[93%] max-[317px]:w-[83%] ${
           items.discount > 0
             ? "flex justify-between items-center px-3"
             : "text-center"

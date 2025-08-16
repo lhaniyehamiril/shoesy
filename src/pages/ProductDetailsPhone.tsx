@@ -5,7 +5,7 @@ export default function ProductDetailsPhone() {
   const { id } = useParams();
   const productId = Number(id);
   return (
-    <div className="min-[1190px]:hidden bg-[var(--color-gray-primary)] min-h-screen">
+    <div className="min-[1190px]:hidden bg-[#222] min-h-screen">
       <ProductDetails productId={productId} />
     </div>
   );

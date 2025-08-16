@@ -6,4 +6,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   assetsInclude: ["**/*.ttf"],
+  server: {
+    proxy: {
+      "/api": "http://localhost:3000",
+    },
+  },
 });

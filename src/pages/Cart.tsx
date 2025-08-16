@@ -10,7 +10,7 @@ import { CartList } from "../features/cart/CartList";
 import { CheckOutBox } from "../features/cart/CheckOutBox";
 import { IconCart } from "../icons/IconCart";
 
-export const Cart = () => {
+export default function Cart() {
   const cart = useAppSelector(cartProduct);
   const username = useAppSelector(user);
 

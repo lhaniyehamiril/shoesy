@@ -1,20 +1,20 @@
 import { createContext, ReactNode, useContext } from "react";
+
+type productFormType = {
+  register: UseFormRegister<dataShoes>;
+  reset: UseFormReset<dataShoes>;
+  handleSubmit: UseFormHandleSubmit<dataShoes>;
+  errors: FieldErrors<dataShoes>;
+};
+
 import {
-  FieldErrors,
-  FieldValue,
-  useForm,
   UseFormHandleSubmit,
   UseFormRegister,
   UseFormReset,
+  FieldErrors,
+  useForm,
 } from "react-hook-form";
-
-type productFormType = {
-  register: UseFormRegister<FieldValue>;
-  reset: UseFormReset<FieldValues>;
-  handleSubmit: UseFormHandleSubmit<FieldValues, FieldValue>;
-  errors: FieldErrors<FieldValues>;
-};
-
+import { dataShoes } from "../services/type";
 const ProductFormContext = createContext<productFormType | undefined>(
   undefined
 );
@@ -25,7 +25,7 @@ const ProductFormProvider = ({ children }: { children: ReactNode }) => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<dataShoes>();
   return (
     <ProductFormContext.Provider
       value={{ register, reset, handleSubmit, errors }}

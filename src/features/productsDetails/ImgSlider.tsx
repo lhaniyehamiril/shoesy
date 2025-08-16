@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import "swiper/css";
 import { Pagination } from "swiper/modules";
+
+import "swiper/swiper-bundle.css";
 import tw from "tailwind-styled-components";
 
 import { dataShoes } from "../../services/type";

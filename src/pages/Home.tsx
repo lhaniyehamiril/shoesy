@@ -4,8 +4,7 @@ import { ProductDetailSidebarDesktop } from "../features/productsDetails/Product
 import { OfferBox } from "../ui/OfferBox";
 import { CategoriesProduct } from "../features/products/CategoriesProduct";
 import { ProductList } from "../features/products/ProductList";
-
-export const Home = () => {
+export default function Home() {
   return (
     <div className="mt-32 md:mt-36">
       <Header />
@@ -18,4 +17,4 @@ export const Home = () => {
       </div>
     </div>
   );
-};
+}

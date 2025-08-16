@@ -4,7 +4,7 @@ import { CategoriesFavorite } from "../features/favorite/CategoriesFavorite";
 import { FavoriteList } from "../features/favorite/FavoriteList";
 import { ProductDetailSidebarDesktop } from "../features/productsDetails/ProductDetailSidebarDesktop";
 
-export const Favorite = () => {
+export default function Favorite() {
   return (
     <div className="pb-20">
       <Header />
@@ -14,4 +14,4 @@ export const Favorite = () => {
       <FavoriteList />
     </div>
   );
-};
+}

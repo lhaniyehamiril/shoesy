@@ -3,8 +3,7 @@ import { NavigateBtn } from "../ui/NavigateBtn";
 import { OrderForm } from "../features/order/OrderForm";
 import { OrderSummary } from "../features/order/OrderSummary";
 import { OrderList } from "../features/order/OrderList";
-
-export const Order = () => {
+export default function Order() {
   const [show, setShow] = useState(false);
   return (
     <div className=" overflow-hidden">
@@ -23,4 +22,4 @@ export const Order = () => {
       )}
     </div>
   );
-};
+}

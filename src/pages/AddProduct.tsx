@@ -4,7 +4,7 @@ import { user } from "../features/auth/authSlice";
 import { NavApp } from "../features/navbar/NavApp";
 import { useAppSelector } from "../hooks/useAppSelector";
 
-export const AddProduct = () => {
+export default function AddProduct() {
   const userName = useAppSelector(user);
   return (
     <>
@@ -21,4 +21,4 @@ export const AddProduct = () => {
       )}
     </>
   );
-};
+}

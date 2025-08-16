@@ -1,42 +1,48 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
 import { ProductRefProvider } from "./contexts/ProductRefProvider";
 import { ProductFormProvider } from "./contexts/ProductFormProvider";
 
-import AppLayout from "./pages/AppLayout";
-import { Home } from "./pages/Home";
-import { ProductDetailsPhone } from "./pages/ProductDetailsPhone";
-import { Favorite } from "./pages/Favorite";
-import { Cart } from "./pages/Cart";
-import { Order } from "./pages/Order";
-import { AddProduct } from "./pages/AddProduct";
+import { Loading } from "./ui/Loading";
+
+const AppLayout = lazy(() => import("./pages/AppLayout"));
+const Home = lazy(() => import("./pages/Home"));
+const ProductDetailsPhone = lazy(() => import("./pages/ProductDetailsPhone"));
+const Favorite = lazy(() => import("./pages/Favorite"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Order = lazy(() => import("./pages/Order"));
+const AddProduct = lazy(() => import("./pages/AddProduct"));
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProductRefProvider>
-              <AppLayout />
-            </ProductRefProvider>
-          }
-        >
-          <Route index element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetailsPhone />} />
-          <Route path="favorite" element={<Favorite />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="order" element={<Order />} />
+      <Suspense fallback={<Loading />}>
+        <Routes>
           <Route
-            path="product/add"
+            path="/"
             element={
-              <ProductFormProvider>
-                <AddProduct />
-              </ProductFormProvider>
+              <ProductRefProvider>
+                <AppLayout />
+              </ProductRefProvider>
             }
-          />
-        </Route>
-      </Routes>
+          >
+            <Route index element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetailsPhone />} />
+            <Route path="favorite" element={<Favorite />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="order" element={<Order />} />
+            <Route
+              path="product/add"
+              element={
+                <ProductFormProvider>
+                  <AddProduct />
+                </ProductFormProvider>
+              }
+            />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };

@@ -6,6 +6,7 @@ import { brands } from "./productShoesSlice";
 
 import { Spinner } from "../../ui/Spinner";
 import { ProductItems } from "./ProductItems";
+import { Error } from "../../ui/Error";
 
 export const ProductList = () => {
   const { shoes, errorShoes, loadingShoes } = useGetDataShoes();
@@ -20,7 +21,7 @@ export const ProductList = () => {
         <Spinner />
       </div>
     );
-  if (errorShoes) return <span>error</span>;
+  if (errorShoes) return <Error />;
 
   return (
     <div className="flex items-center justify-center">

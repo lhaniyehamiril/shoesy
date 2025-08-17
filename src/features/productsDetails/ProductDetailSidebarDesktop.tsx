@@ -19,7 +19,7 @@ export const ProductDetailSidebarDesktop = () => {
   }, [dispatch, location.pathname]);
   return (
     <div className="hidden min-[1190px]:block">
-      <div className="z-[1000] bg-[var(--color-gray-primary)] h-[95vh] w-[26%] fixed top-5 right-3 rounded-2xl overflow-y-scroll custom-scroll ">
+      <div className="z-[1000] bg-[#222] h-[95vh] w-[26%] max-[1240px]:w-[28%] fixed top-5 right-3 rounded-2xl overflow-y-scroll custom-scroll ">
         <div>
           {!productId ? (
             <ProductSidebarSummery />

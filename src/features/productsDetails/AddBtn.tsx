@@ -19,7 +19,7 @@ export const AddBtn: React.FC<AddBtnProps> = ({ handleCart }) => {
   };
   return (
     <>
-      <Button classBtn="w-[40%] md:p-3 text-[1.1rem]" onClick={handleCart}>
+      <Button classBtn="w-[70%] md:p-3 text-[1.1rem]" onClick={handleCart}>
         Add
       </Button>
 

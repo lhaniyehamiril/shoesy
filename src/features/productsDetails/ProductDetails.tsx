@@ -82,18 +82,18 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
       variants={variantDiv}
       initial="hidden"
       animate="visible"
-      className="font-bold p-5"
+      className="font-bold p-5 min-[550px]:px-10 md:p-5"
     >
       <div className="flex justify-between items-center">
         <div className="min-[1190px]:hidden">
-          <NavigateBtn color="#c387ff" />
+          <NavigateBtn color="#d2a4ff" />
         </div>
         <div className="hidden min-[1190px]:block">
           <button
             className="cursor-pointer"
             onClick={() => dispatch(setProductId(null))}
           >
-            <IconBack color="#c387ff" />
+            <IconBack color="#d2a4ff" />
           </button>
         </div>
         <h3 className="font-bold text-white text-xl ">Details</h3>
@@ -104,27 +104,32 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
           productId={product?.id}
         />
       </div>
-      <div className="max-[286px]:overflow-x-scroll max-[286px]:gap-5 custom-scroll flex justify-between items-center mt-9 text-lg bg-[var(--color-purple)] rounded-[1.2rem] p-4 md:p-4 text-[var(--color-gray-primary)] whitespace-nowrap ">
-        <span>{product?.name}</span>
-        <Discount data={product} />
+      <div className="flex flex-col gap-2 mt-5">
+        <h2 className="text-xl text-white">{product?.name}</h2>
+        <div className="text-[var(--color-purple)] text-[1.2rem]">
+          <Discount data={product} />
+        </div>
       </div>
-      <ImgSlider product={product} />
-      <div className="bg-[var(--color-purple)] rounded-3xl p-4">
+      <div className="flex items-center justify-center">
+        <div className="flex w-full bg-[var(--color-gray-primary)] min-[550px]:w-[36rem] border-dashed border-1 mt-3 rounded-4xl py-6 px-3 justify-center">
+          <ImgSlider product={product} />
+          <ColorPicker
+            product={product}
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
+        </div>
+      </div>
+      <SizePicker
+        productSize={product?.sizes}
+        selectedSize={selectedSize}
+        setSelectedSize={setSelectedSize}
+      />
+      <div className="bg-[var(--color-purple)] rounded-3xl p-4 mt-6">
         <h2 className="text-xl">Description</h2>
         <p className="mt-2 text-[0.85rem]">{product?.description}</p>
       </div>
-      <div className=" bg-[var(--color-purple)] px-4 py-6 rounded-[1.2rem] mt-5">
-        <SizePicker
-          productSize={product?.sizes}
-          selectedSize={selectedSize}
-          setSelectedSize={setSelectedSize}
-        />
-        <ColorPicker
-          product={product}
-          selectedColor={selectedColor}
-          setSelectedColor={setSelectedColor}
-        />
-      </div>
+
       <div className="flex mt-4 gap-2 justify-center">
         <AddBtn handleCart={handleCart} />
         <Quantity

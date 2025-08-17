@@ -18,7 +18,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
           onClick={() => {
             setSelectedColor(color);
           }}
-          className={`w-6 h-6 rounded-full cursor-pointer shrink-0 ${
+          className={`w-7 h-7 rounded-full cursor-pointer shrink-0 ${
             selectedColor === color
               ? "outline-[var(--color-purple)] outline-2 border-4 border-[var(--color-gray-primary)]"
               : ""

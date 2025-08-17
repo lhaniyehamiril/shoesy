@@ -84,7 +84,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
       variants={variantDiv}
       initial="hidden"
       animate="visible"
-      className="font-bold p-5 pb-4 min-[550px]:px-10 md:p-5"
+      className="font-bold p-5 min-[550px]:px-10 md:p-5"
     >
       <div className="flex justify-between items-center">
         <div className="min-[1190px]:hidden">
@@ -107,8 +107,8 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
         />
       </div>
       <div className="flex flex-col gap-2 mt-5 pl-4">
-        <h2 className="text-xl text-white">{product?.name}</h2>
-        <div className="text-[var(--color-purple)] text-[1.2rem]">
+        <h2 className="text-[1.5rem] text-white">{product?.name}</h2>
+        <div className="text-[var(--color-purple)] text-[1rem] -mt-1">
           <Discount data={product} />
         </div>
       </div>

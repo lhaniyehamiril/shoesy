@@ -9,7 +9,7 @@ type SizePickerProps = {
 };
 
 const ButtonSize = tw.button`
-bg-transparent border-dashed cursor-pointer text-white border-1 border-[var(--color-purple)] px-3 text-[11px] py-[6px] rounded-xl
+bg-transparent border-dashed cursor-pointer text-white border-1 border-[var(--color-purple)] px-3 text-[12px] py-[6px] rounded-xl
 ${(props) =>
   props.$isActive
     ? "bg-[var(--color-purple)] text-[var(--color-gray-primary)]"

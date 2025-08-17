@@ -106,7 +106,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
           productId={product?.id}
         />
       </div>
-      <div className="flex flex-col gap-2 mt-5">
+      <div className="flex flex-col gap-2 mt-5 pl-4">
         <h2 className="text-xl text-white">{product?.name}</h2>
         <div className="text-[var(--color-purple)] text-[1.2rem]">
           <Discount data={product} />

@@ -49,7 +49,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       exit="hidden"
       className="max-[317px]:w-full flex items-center justify-center flex-col gap-1"
     >
-      <div className="bg-[var(--color-gray-primary)] relative py-2 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
+      <div className="bg-[var(--color-gray-primary)] relative py-4 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
         {owner === "haniyeh" && (
           <button
             type="button"
@@ -60,7 +60,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
           </button>
         )}
 
-        <div className="absolute right-3 top-[0.70rem]">
+        <div className="absolute right-[13px] top-[0.80rem]">
           <FavoriteBtn
             width="23"
             height="23"
@@ -91,7 +91,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             />
           </button>
         </div>
-        <h2 className="text-white  md:px-2 -mt-2 pb-2  whitespace-nowrap rounded-full text-[11px] md:text-[1rem]">
+        <h2 className="text-white  md:px-2 -mt-2  whitespace-nowrap rounded-full text-[13px] md:text-[1rem]">
           {items.name}
         </h2>
       </div>

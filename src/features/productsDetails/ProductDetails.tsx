@@ -84,7 +84,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
       variants={variantDiv}
       initial="hidden"
       animate="visible"
-      className="font-bold p-5 min-[550px]:px-10 md:p-5"
+      className="font-bold p-5 pb-4 min-[550px]:px-10 md:p-5"
     >
       <div className="flex justify-between items-center">
         <div className="min-[1190px]:hidden">

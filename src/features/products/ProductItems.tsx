@@ -47,9 +47,9 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="max-[317px]:w-full flex items-center justify-center flex-col gap-1"
+      className="max-[317px]:w-full flex items-center justify-center font-bold flex-col gap-1"
     >
-      <div className="bg-[var(--color-gray-primary)] relative py-4 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
+      <div className="bg-[var(--color-gray-primary)] relative py-5 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
         {owner === "haniyeh" && (
           <button
             type="button"
@@ -102,7 +102,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             : "text-center"
         }`}
       >
-        <span className="text-[11px] md:text-[0.86rem]">${items.price}</span>
+        <span className="text-[13px] md:text-[0.86rem]">${items.price}</span>
         {items.discount > 0 ? (
           <motion.div
             initial={{ opacity: 0, x: 6 }}

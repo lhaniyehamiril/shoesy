@@ -11,7 +11,7 @@ export const CategoriesProduct = () => {
   const selectBrand = useAppSelector(brands);
   return (
     <div className="w-full overflow-x-auto mt-5 scroll-hidden">
-      <ul className="font-wild text-[12px] px-3 md:text-[1rem] flex gap-2 md:gap-2 items-center justify-start min-[290px]:justify-center whitespace-nowrap">
+      <ul className="font-wild text-[14px] px-3 md:text-[1rem] flex gap-2 md:gap-2 items-center justify-start min-[290px]:justify-center whitespace-nowrap">
         <li>
           <CategoriesBtn
             $isActive={!selectBrand}

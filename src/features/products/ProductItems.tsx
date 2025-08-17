@@ -47,9 +47,9 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="max-[317px]:w-full flex items-center justify-center font-bold flex-col gap-1"
+      className="max-[330px]:w-full flex items-center justify-center font-bold flex-col gap-1"
     >
-      <div className="bg-[var(--color-gray-primary)] relative py-5 rounded-[1.3rem] px-4 max-[317px]:w-[85%] md:w-48 max-[360px]:w-[9rem] min-[506px]:w-42  max-[402px]:w-[10.5rem] max-[505px]:w-[11.5rem]">
+      <div className="bg-[var(--color-gray-primary)] relative py-5 rounded-[1.3rem] px-4 max-[330px]:w-[85%] md:w-48 max-[360px]:w-[9.8rem] min-[506px]:w-42  max-[402px]:w-[10.7rem] max-[505px]:w-[11.5rem]">
         {owner === "haniyeh" && (
           <button
             type="button"
@@ -91,12 +91,12 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             />
           </button>
         </div>
-        <h2 className="text-white  md:px-2 -mt-2  whitespace-nowrap rounded-full text-[13px] md:text-[1rem]">
+        <h2 className="text-white translate-y-2  md:px-2  whitespace-nowrap rounded-full text-[13px] md:text-[1rem]">
           {items.name}
         </h2>
       </div>
       <div
-        className={` bg-[var(--color-gray-primary)] text-white py-[0.65rem] rounded-full w-[93%] max-[317px]:w-[83%] ${
+        className={` bg-[var(--color-gray-primary)] text-white py-[0.65rem] rounded-full w-[93%] max-[330px]:w-[83%] ${
           items.discount > 0
             ? "flex justify-between items-center px-3"
             : "text-center"

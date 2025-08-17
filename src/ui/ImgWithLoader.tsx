@@ -21,7 +21,7 @@ export const ImgWithLoader: React.FC<ImgWithLoader> = ({
   return (
     <div className={`relative ${className}`}>
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="absolute  inset-0 flex items-center justify-center z-10">
           <Spinner />
         </div>
       )}
@@ -30,7 +30,7 @@ export const ImgWithLoader: React.FC<ImgWithLoader> = ({
         src={src}
         alt={alt}
         onLoad={() => setIsLoading(false)}
-        className={`object-cover w-full h-full transition-opacity duration-300 ${classImg} ${
+        className={`object-cover w-full h-full select-none transition-opacity duration-300 ${classImg} ${
           isLoading ? "opacity-0" : "opacity-100"
         } ${borderColor ? borderColor : ""}`}
       />

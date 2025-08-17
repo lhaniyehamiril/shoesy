@@ -1,11 +1,24 @@
 import { Outlet } from "react-router-dom";
-
+import { Toaster } from "sonner";
 export default function AppLayout() {
   return (
     <div>
       <main>
         <Outlet />
       </main>
+      <Toaster
+        position="bottom-left"
+        richColors
+        toastOptions={{
+          style: {
+            width: "10rem",
+            borderRadius: "1.3rem",
+            background: "#d2a4ff",
+            border: "none",
+            color: "#1e3f14",
+          },
+        }}
+      />
     </div>
   );
 }

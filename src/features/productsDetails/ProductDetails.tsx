@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { easeInOut, motion } from "motion/react";
+import { toast } from "sonner";
 
 import { useGetDataShoes } from "../../hooks/useGetDataShoes";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
@@ -67,6 +68,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
     setSelectedColor(product?.mainColor);
     setSelectedSize(product?.sizes[0]);
     setSelectedQuantity(1);
+    toast.success("successful", { duration: 1000 });
   };
 
   useEffect(() => {

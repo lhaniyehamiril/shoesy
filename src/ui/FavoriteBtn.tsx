@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 import { modal, setModalOpen, user } from "../features/auth/authSlice";
 import {
@@ -45,6 +46,7 @@ export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({
       dispatch(removeFavorite(productId));
     } else if (product) {
       dispatch(addToFavorite(product));
+      toast.success("added to favorite", { duration: 1000 });
     }
   };
   const handleCloseModal = () => {
@@ -62,7 +64,6 @@ export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({
           height={height}
         />
       </motion.button>
-
       {isModalOpen ? (
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <LoginForm closeModel={handleCloseModal} />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 import { useProductForm } from "../../contexts/ProductFormProvider";
 
@@ -52,6 +53,7 @@ export const AddProductForm = () => {
     setImages({ main: "", under: "", top: "" });
     reset();
     setIsSubmit(false);
+    toast.success("successful");
   };
 
   const handleButtonClick = (

@@ -53,7 +53,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
         {owner === "haniyeh" && (
           <button
             type="button"
-            className="font-bold text-white cursor-pointer mt-1"
+            className="font-bold text-white cursor-pointer -translate-y-[6.6px]"
             onClick={handleRemove}
           >
             <IconTrash strokeColor="#d2a4ff" />

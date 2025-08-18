@@ -40,7 +40,7 @@ export const NavApp = () => {
               icon={<IconCart width="28" height="28" />}
             />
           </li>
-          {username === "haniyeh" && (
+          {username === "im shoesy" && (
             <li>
               <NavItem
                 to="/product/add"

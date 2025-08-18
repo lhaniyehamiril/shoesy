@@ -50,7 +50,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
       className="max-[330px]:w-full flex items-center justify-center font-bold flex-col gap-1"
     >
       <div className="bg-[var(--color-gray-primary)] relative py-5 rounded-[1.3rem] px-4 max-[330px]:w-[85%] md:w-48 max-[360px]:w-[9.8rem] min-[506px]:w-42  max-[402px]:w-[10.7rem] max-[505px]:w-[11.5rem]">
-        {owner === "haniyeh" && (
+        {owner === "im shoesy" && (
           <button
             type="button"
             className="font-bold text-white cursor-pointer -translate-y-[6.6px]"

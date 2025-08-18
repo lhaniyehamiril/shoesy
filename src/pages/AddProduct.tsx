@@ -8,7 +8,7 @@ export default function AddProduct() {
   const userName = useAppSelector(user);
   return (
     <>
-      {userName === "haniyeh" && (
+      {userName === "im shoesy" && (
         <div className="pb-40 md:pb-0 ">
           <NavApp />
           <div className="mt-8 md:flex min-[1120px]:gap-28 ">

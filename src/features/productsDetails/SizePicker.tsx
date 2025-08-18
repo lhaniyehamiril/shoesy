@@ -23,7 +23,7 @@ export const SizePicker: React.FC<SizePickerProps> = ({
   productSize,
 }) => {
   return (
-    <div className="mt-5">
+    <div className="mt-12">
       <h1 className="text-white text-xl text-center">size </h1>
       <AnimatePresence>
         <motion.div

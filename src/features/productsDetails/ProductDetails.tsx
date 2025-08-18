@@ -113,7 +113,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <div className="flex w-full bg-[var(--color-gray-primary)] min-[550px]:w-[36rem] border-dashed border-1 mt-3 rounded-4xl py-6 px-3 justify-center">
+        <div className="flex w-full bg-[var(--color-gray-primary)] max-[530px]:w-[21.5rem]  min-[550px]:w-[36rem] border-dashed border-1 mt-8 rounded-4xl py-6 px-3 justify-center">
           <ImgSlider product={product} />
           <ColorPicker
             product={product}

@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <div className="pl-3">
-      <div className="flex items-center gap-2 rounded-full max-[352px]:text-[12px] bg-[var(--color-gray-primary)] text-white text-[15px] font-bold p-[1rem] px-4 absolute bottom-5">
+      <div className="flex items-center gap-2 rounded-full max-[352px]:text-[12px] bg-[var(--color-gray-primary)] text-white text-[15px] font-bold py-3 px-4 absolute bottom-5">
         <span>
           build by <b className="text-[var(--color-purple)]">haniyeh</b>
         </span>

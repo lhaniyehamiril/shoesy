@@ -43,7 +43,7 @@ export const CartList = () => {
       <div
         className={`${
           localCart.length > 0 && username
-            ? "sm:bg-[#eeee] mt-2 h-[15rem] min-[600px]:h-[13rem] min-[1072px]:h-[16.5rem] sm:py-5 rounded-4xl overflow-y-scroll scroll-hidden"
+            ? "sm:bg-[#eeee] mt-2 h-[23rem] min-[600px]:h-[13rem] min-[1072px]:h-[16.5rem] sm:py-5 rounded-4xl overflow-y-scroll scroll-hidden"
             : ""
         }`}
       >

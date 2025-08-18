@@ -11,7 +11,7 @@ export const CategoriesFavorite = () => {
   const selectBrand = useAppSelector(brands);
   return (
     <div className="w-full overflow-x-auto mt-30 md:mt-[8.5rem] scroll-hidden">
-      <ul className="font-wild px-3 text-[12px] md:text-[1rem] flex gap-2 md:gap-2 items-center justify-start min-[290px]:justify-center whitespace-nowrap">
+      <ul className="font-wild px-3 text-[14px] md:text-[1rem] flex gap-2 md:gap-2 items-center justify-start min-[290px]:justify-center whitespace-nowrap">
         <li>
           <CategoriesBtn
             $isActive={!selectBrand}

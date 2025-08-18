@@ -26,7 +26,7 @@ export const ProductList = () => {
   return (
     <div className="flex items-center justify-center">
       <AnimatePresence>
-        <ul className="flex items-center justify-center pb-30 md:gap-5 md:w-[58%] min-[790px]:w-[400px] max-[330px]:w-full min-[506px]:px-8 min-[707px]:px-6 flex-wrap gap-3 mt-7 md:pr-20">
+        <ul className="flex items-center justify-center pb-38 md:gap-5 md:w-[58%] min-[790px]:w-[400px] max-[330px]:w-full min-[506px]:px-8 min-[707px]:px-6 flex-wrap gap-3 mt-7 md:pr-20">
           {filterShoes?.map((items) => (
             <ProductItems items={items} key={items.id} />
           ))}

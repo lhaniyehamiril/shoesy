@@ -1,6 +1,6 @@
 # 👟 Shoesy - Modern E-Commerce Demo  
 
-*A responsive shoe store built with React, TypeScript, and modern frontend tools *(no backend)*.  
+**A responsive shoe store built with React, TypeScript, and modern frontend tools *(no backend)*.  
 
 ## live demo 
 🔗 [shoesy](https://shoesy.vercel.app/)

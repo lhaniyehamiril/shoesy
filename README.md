@@ -21,5 +21,5 @@
 
 ### Running the App
 Start both frontend and mock backend simultaneously:
-```bash npm start
+```bash npm start```
 

@@ -15,7 +15,7 @@ export default function AppLayout() {
             borderRadius: "1.3rem",
             background: "#333",
             border: "none",
-            color: "#1e3f14",
+            color: "#d2a4ff",
           },
         }}
       />

@@ -13,7 +13,7 @@ export default function AppLayout() {
           style: {
             width: "10rem",
             borderRadius: "1.3rem",
-            background: "#d2a4ff",
+            background: "#333",
             border: "none",
             color: "#1e3f14",
           },

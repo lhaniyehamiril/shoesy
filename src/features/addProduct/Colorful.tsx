@@ -14,7 +14,7 @@ export const Colorful: React.FC<colorFulProps> = ({
   return (
     <div
       ref={pickerColorRef}
-      className="w-0  absolute top-16 min-[290px]:left-5 left-0 mt-2 z-50"
+      className="w-b 0  absolute top-16 min-[290px]:left-5 left-0 mt-2 z-50"
     >
       <HexColorPicker color={color} onChange={setColor} />
     </div>

@@ -1,6 +1,6 @@
 import { StyleProps } from "./type";
 
-export const Address: React.FC<StyleProps> = ({ classSvg }) => {
+ export const Address: React.FC<StyleProps> = ({ classSvg }) => {
   return (
     <svg
       fill="#333"

@@ -1,4 +1,4 @@
-export const IconTrash = ({ strokeColor }: { strokeColor: string }) => {
+export  const IconTrash = ({ strokeColor }: { strokeColor: string }) => {
   return (
     <svg
       width="20px"

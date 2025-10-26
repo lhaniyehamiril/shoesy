@@ -4,7 +4,7 @@ type productFormType = {
   register: UseFormRegister<dataShoes>;
   reset: UseFormReset<dataShoes>;
   handleSubmit: UseFormHandleSubmit<dataShoes>;
-  errors: FieldErrors<dataShoes>;
+  errors: FieldErrors<dataShoes>;  
 };
 
 import {
@@ -24,11 +24,11 @@ const ProductFormProvider = ({ children }: { children: ReactNode }) => {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors},
   } = useForm<dataShoes>();
   return (
     <ProductFormContext.Provider
-      value={{ register, reset, handleSubmit, errors }}
+      value={{ register, reset, handleSubmit, errors}}
     >
       {children}
     </ProductFormContext.Provider>

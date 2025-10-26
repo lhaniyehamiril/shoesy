@@ -1,4 +1,4 @@
-export const Shoe = () => {
+export  const Shoe = () => {
   return (
     <svg
       fill="#000000"

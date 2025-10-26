@@ -7,20 +7,18 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import { BlackBox } from "../../ui/StyleComponents";
 import { Colorful } from "./Colorful";
 import { ColorBox } from "./ColorBox";
-import { useProductForm } from "../../contexts/ProductFormProvider";
+import { useProductForm } from "./contexts/ProductFormProvider";
 import { variantX } from "../../ui/variantMotion";
 import { InputInfo } from "./InputInfo";
-type ProductInfoBoxProps = {
-  mainColor: string;
-  setMainColor: (color: string) => void;
-};
-export const ProductInfoBox: React.FC<ProductInfoBoxProps> = ({
-  mainColor,
-  setMainColor,
-}) => {
+import { useProductMeta } from "./contexts/ProductMetaProvider";
+
+
+
+export const ProductInfoBox = () => {
   const { setIsOpen, isOpen } = useDisplay();
   const pickerColorRef = useRef<HTMLDivElement | null>(null);
   const { register, errors } = useProductForm();
+  const {setProductMeta ,productMeta: {mainColor}} = useProductMeta()
 
   // close color picker when clicking outside
   useClickOutside(pickerColorRef, () => setIsOpen(false));
@@ -70,8 +68,12 @@ export const ProductInfoBox: React.FC<ProductInfoBoxProps> = ({
           </ColorBox>
           {isOpen && (
             <Colorful
+              setColor={(newColor) =>
+              setProductMeta((prev) => ({
+             ...prev,
+              mainColor: newColor,
+             }))}
               color={mainColor}
-              setColor={setMainColor}
               pickerColorRef={pickerColorRef}
             />
           )}

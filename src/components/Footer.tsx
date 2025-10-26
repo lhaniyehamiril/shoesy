@@ -1,11 +1,12 @@
 export const Footer = () => {
   return (
     <div className="pl-3">
+       <a href="https://github.com/lhaniyehamiril/shoesy">
       <div className="flex items-center gap-2 rounded-full max-[352px]:text-[12px] bg-[var(--color-gray-primary)] text-white text-[15px] font-bold py-3 px-4 absolute bottom-5">
         <span>
           build by <b className="text-[var(--color-purple)]">haniyeh</b>
         </span>
-        <a href="https://github.com/lhaniyehamiril/shoesy">
+       
           <svg
             width="25px"
             height="25px"
@@ -20,8 +21,8 @@ export const Footer = () => {
               clip-rule="evenodd"
             />
           </svg>
-        </a>
       </div>
+       </a>
     </div>
   );
 };

@@ -23,3 +23,4 @@ export const Heart: React.FC<StyleProps> = ({
     </svg>
   );
 };
+ 

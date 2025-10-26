@@ -4,10 +4,10 @@ import { easeInOut, motion } from "motion/react";
 import { dataShoes } from "../../services/type";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { setProductId } from "../products/productShoesSlice";
-import { useProductRef } from "../../contexts/ProductRefProvider";
+import { useProductRef } from "../../context/ProductRefProvider";
 
-import { ImgWithLoader } from "../../ui/ImgWithLoader";
-import { FavoriteBtn } from "../../ui/FavoriteBtn";
+import { ImgWithLoader } from "../../components/ImgWithLoader";
+import { FavoriteBtn } from "../../components/buttons/FavoriteBtn";
 
 type ProductProps = {
   items: dataShoes;

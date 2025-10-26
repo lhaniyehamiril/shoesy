@@ -7,7 +7,7 @@ import { useAppNavigate } from "../../hooks/useAppNavigate";
 import { formatCurrency } from "../../utils/helpers";
 import { cartProduct } from "./CartSlice";
 import { variantScale, variantY } from "../../ui/variantMotion";
-import { Button } from "../../ui/Button";
+import { Button } from "../../components/buttons/Button";
 
 const Div = tw.div`
 flex justify-between

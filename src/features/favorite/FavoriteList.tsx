@@ -6,7 +6,7 @@ import { favoriteArr } from "./favoriteSlice";
 
 import { FavoriteItems } from "./FavoriteItems";
 import { Heart } from "../../icons/Heart";
-import { EmptyBox } from "../../ui/EmptyBox";
+import { EmptyBox } from "../../components/EmptyBox";
 
 export const FavoriteList = () => {
   const favorites = useAppSelector(favoriteArr);
@@ -17,7 +17,7 @@ export const FavoriteList = () => {
     : favorites;
   return (
     <div className="flex items-center justify-center px-3">
-      <ul className="flex items-center justify-center w-full md:gap-5 md:w-[40%] flex-wrap gap-3 mt-7 min-[400px]:px-3">
+      <ul className="flex items-center justify-center w-full md:gap-5 md:w-[40%] flex-wrap gap-3 mt-5 min-[400px]:px-3">
         {favorites?.length === 0 ? (
           <EmptyBox
             icon={<Heart width="45" height="45" color="#c387ff" />}

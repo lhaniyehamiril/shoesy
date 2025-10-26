@@ -1,8 +1,11 @@
+import { useAppSelector } from "../hooks/useAppSelector";
+
+import { user } from "../features/auth/authSlice";
+
 import { AddProductForm } from "../features/addProduct/AddProductForm";
 import { Owner } from "../features/addProduct/Owner";
-import { user } from "../features/auth/authSlice";
 import { NavApp } from "../features/navbar/NavApp";
-import { useAppSelector } from "../hooks/useAppSelector";
+
 
 export default function AddProduct() {
   const userName = useAppSelector(user);

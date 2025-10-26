@@ -1,3 +1,5 @@
+export  const generateId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
+
 export const formatCurrency = (
   amount: number,
   currencySymbol = "$",

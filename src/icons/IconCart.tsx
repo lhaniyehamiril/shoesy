@@ -1,6 +1,6 @@
 import { StyleProps } from "./type";
 
-export const IconCart: React.FC<StyleProps> = ({ width, height, color }) => {
+export  const IconCart: React.FC<StyleProps> = ({ width, height, color }) => {
   return (
     <svg
       className="cursor-pointer"

@@ -1,4 +1,4 @@
-import imgOffer from "../assets/offer-shoe-in-home-page.webp";
+import imgOffer from "../assets/offer.webp";
 export const OfferBox = () => {
   return (
     <div className="flex items-center justify-center">

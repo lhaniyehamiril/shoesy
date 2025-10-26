@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-import { useProductForm } from "../../contexts/ProductFormProvider";
+import { useProductForm } from './contexts/ProductFormProvider'
 
 import { IconDescription } from "../../icons/IconDescription";
 import { BlackBox } from "../../ui/StyleComponents";

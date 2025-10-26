@@ -1,4 +1,4 @@
-export const IconDescription = () => {
+export  const IconDescription = () => {
   return (
     <svg
       className="rotate-20"
@@ -14,3 +14,4 @@ export const IconDescription = () => {
     </svg>
   );
 };
+

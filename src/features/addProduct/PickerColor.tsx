@@ -10,28 +10,27 @@ import { ColorBox } from "./ColorBox";
 import { IconPlus } from "../../icons/IconPlus";
 import { BlackBox } from "../../ui/StyleComponents";
 import { variantXRight } from "../../ui/variantMotion";
+import { useProductMeta } from "./contexts/ProductMetaProvider";
 
-type PickerColorProps = {
-  colorSelect: string[];
-  setColorSelect: React.Dispatch<React.SetStateAction<string[]>>;
-};
-export const PickerColor: React.FC<PickerColorProps> = ({
-  colorSelect,
-  setColorSelect,
-}) => {
+
+export const PickerColor = () => {
+  const {setProductMeta , productMeta: {colorSelect}} = useProductMeta()
   const { isOpen, setIsOpen } = useDisplay();
   const [color, setColor] = useState("");
   const pickerColorRef = useRef<HTMLDivElement | null>(null);
 
   const handleSubmit = () => {
     if (color.trim()) {
-      setColorSelect((col) => (col.includes(color) ? col : [...col, color]));
+      setProductMeta(prv => ({...prv , colorSelect:
+       prv.colorSelect.includes(color) ?
+       prv.colorSelect : [...prv.colorSelect , color]}))
     }
     setIsOpen(false);
   };
 
   const removeColorSelect = (index: number) => {
-    setColorSelect((prv) => prv.filter((_, i) => i !== index));
+    setProductMeta(prv => ({...prv ,
+     colorSelect: prv.colorSelect.filter((_, i) => i !== index)}))
   };
 
   // close color picker when clicking outside
@@ -72,21 +71,20 @@ export const PickerColor: React.FC<PickerColorProps> = ({
             />
           )}
         </div>
-        <div className="bg-[var(--color-purple)] mt-2 rounded-full p-3 h-12 items-center flex gap-2 w-full overflow-x-auto overflow-y-hidden scroll-hidden">
+        <div className="bg-[var(--color-purple)] mt-2 rounded-full p-3 h-12 items-center flex gap-3 w-full overflow-x-auto overflow-y-hidden scroll-hidden">
           {colorSelect?.map((color, index) => (
-            <>
+            <div key={index} className="flex items-center gap-1">
               <span
-                key={index}
                 style={{ background: color }}
                 className="inline-block rounded-full w-6 h-6 shrink-0"
               ></span>
-              <button
+               <button
                 onClick={() => removeColorSelect(index)}
-                className="text-[var(--color-gray-primary)] font-bold cursor-pointer -translate-x-1"
+                className="text-[var(--color-gray-primary)] font-bold cursor-pointer"
               >
                 x
               </button>
-            </>
+            </div>
           ))}
         </div>
       </BlackBox>

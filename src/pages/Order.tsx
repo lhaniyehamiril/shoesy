@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { NavigateBtn } from "../ui/NavigateBtn";
+
+import { NavigateBtn } from "../components/buttons/NavigateBtn";
+
 import { OrderForm } from "../features/order/OrderForm";
-import { OrderSummary } from "../features/order/OrderSummary";
 import { OrderList } from "../features/order/OrderList";
+import { OrderSummary } from "../features/order/OrderSummary";
+
 export default function Order() {
   const [show, setShow] = useState(false);
   return (

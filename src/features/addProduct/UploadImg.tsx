@@ -2,10 +2,12 @@ import { useRef, useState } from "react";
 import { IconUpload } from "../../icons/IconUpload";
 import { IconCheckMark } from "../../icons/IconCheckMark";
 import { IconCircle } from "../../icons/IconCircle";
+import { imageType } from "./type";
+
 
 type uploadImgProps = {
-  text: string;
-  handleImgUpload: (type: string, url: string) => void;
+  text: imageType;
+  handleImgUpload: (type: imageType, url: string) => void;
 };
 
 export const UploadImg: React.FC<uploadImgProps> = ({

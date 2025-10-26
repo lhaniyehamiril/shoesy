@@ -5,7 +5,7 @@ import { useGetDataShoes } from "../../hooks/useGetDataShoes";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 
 import { searchTerms, setTerm } from "./searchSlice";
-import { useProductRef } from "../../contexts/ProductRefProvider";
+import { useProductRef } from "../../context/ProductRefProvider";
 
 export const SearchResult = () => {
   const { shoes } = useGetDataShoes();

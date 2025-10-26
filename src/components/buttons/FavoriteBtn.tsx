@@ -1,20 +1,20 @@
 import { motion } from "motion/react";
 import { toast } from "sonner";
 
-import { modal, setModalOpen, user } from "../features/auth/authSlice";
+import { modal, setModalOpen, user } from "../../features/auth/authSlice"
 import {
   addToFavorite,
   favoriteArr,
   removeFavorite,
-} from "../features/favorite/favoriteSlice";
+} from "../../features/favorite/favoriteSlice";
 
-import { useAppDispatch } from "../hooks/useAppDispatch";
-import { useAppSelector } from "../hooks/useAppSelector";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
-import { dataShoes } from "../services/type";
-import { Heart } from "../icons/Heart";
-import { Modal } from "./Modal";
-import { LoginForm } from "../features/auth/LoginForm";
+import { dataShoes } from "../../services/type";
+import { Heart } from "../../icons/Heart";
+import { Modal } from "../../components/Modal";
+import { LoginForm } from "../../features/auth/LoginForm";
 
 type FavoriteBtnProps = {
   productId?: number;

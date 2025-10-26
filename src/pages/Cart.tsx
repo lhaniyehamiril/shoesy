@@ -3,12 +3,14 @@ import { cartProduct } from "../features/cart/CartSlice";
 
 import { useAppSelector } from "../hooks/useAppSelector";
 
-import { Header } from "../ui/Header";
+import { Header } from "../components/Header";
+import { EmptyBox } from "../components/EmptyBox";
+import { IconCart } from "../icons/IconCart";
+
 import { NavApp } from "../features/navbar/NavApp";
-import { EmptyBox } from "../ui/EmptyBox";
 import { CartList } from "../features/cart/CartList";
 import { CheckOutBox } from "../features/cart/CheckOutBox";
-import { IconCart } from "../icons/IconCart";
+
 
 export default function Cart() {
   const cart = useAppSelector(cartProduct);

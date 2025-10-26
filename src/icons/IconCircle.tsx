@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { variantScale } from "../ui/variantMotion";
+
 export const IconCircle = ({ progress }: { progress?: number }) => {
   return (
     <motion.svg

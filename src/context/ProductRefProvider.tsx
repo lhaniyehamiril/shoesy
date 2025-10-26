@@ -1,4 +1,6 @@
 import { createContext, useContext, useRef, ReactNode } from "react";
+
+
 type ProductRefMap = {
   [key: string]: HTMLLIElement | null;
 };
@@ -6,6 +8,7 @@ type ProductRefContextType = {
   setProductRef: (key: string, ref: HTMLLIElement | null) => void;
   productRefs: { current: ProductRefMap };
 };
+
 
 const ProductRefContext = createContext<ProductRefContextType | undefined>(
   undefined

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { easeInOut, motion } from "motion/react";
 import { toast } from "sonner";
 
@@ -17,9 +17,10 @@ import { ColorPicker } from "./ColorPicker";
 import { ImgSlider } from "./ImgSlider";
 
 import { IconBack } from "../../icons/IconBack";
-import { Discount } from "../../ui/Discount";
-import { NavigateBtn } from "../../ui/NavigateBtn";
-import { FavoriteBtn } from "../../ui/FavoriteBtn";
+import { Discount } from "../../components/Discount";
+import { NavigateBtn } from "../../components/buttons/NavigateBtn";
+import { FavoriteBtn } from "../../components/buttons/FavoriteBtn";
+import { useAppNavigate } from "../../hooks/useAppNavigate";
 
 type ProductDetailsProps = {
   productId: number | null;
@@ -35,6 +36,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const { shoes } = useGetDataShoes();
+  const navigate = useAppNavigate()
   const username = useAppSelector(user);
   const product = shoes?.find((product) => product.id === productId);
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
@@ -44,13 +46,21 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
     product?.sizes[0]
   );
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+  
+  const resetSelections = useCallback(() => {
+    setSelectedColor(product?.mainColor);
+    setSelectedSize(product?.sizes[0]);
+    setSelectedQuantity(1);
+  },[product])
+
+   useEffect(() => resetSelections(), [resetSelections]);
 
   const handleCart = () => {
     if (!username) {
       dispatch(setModalOpen(true));
       return;
     }
-
+  
     if (product) {
       const generateId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
       const newItems = {
@@ -65,17 +75,11 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({
       };
       dispatch(addCart(newItems));
     }
-    setSelectedColor(product?.mainColor);
-    setSelectedSize(product?.sizes[0]);
-    setSelectedQuantity(1);
-    toast.success("successful", { duration: 1000 });
+     resetSelections()
+     toast.success("successful", { duration: 1000 });
+      navigate('/cart')
   };
 
-  useEffect(() => {
-    setSelectedColor(product?.mainColor);
-    setSelectedSize(product?.sizes[0]);
-    setSelectedQuantity(1);
-  }, [product]);
 
   return (
     <motion.div

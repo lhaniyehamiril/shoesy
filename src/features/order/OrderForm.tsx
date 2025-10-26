@@ -11,7 +11,7 @@ import { addOrder } from "./orderSlice";
 
 import { Address } from "../../icons/Address";
 import { Phone } from "../../icons/Phone";
-import { Button } from "../../ui/Button";
+import { Button } from "../../components/buttons/Button";
 import { IconUser } from "../../icons/IconUser";
 import { variantScale, variantX } from "../../ui/variantMotion";
 
@@ -39,29 +39,30 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setShow }) => {
     handleSubmit,
     reset,
     formState: { isValid },
-  } = useForm<InputType>();
-  const cartItems = useAppSelector(cartProduct);
+  } = useForm<InputType>(); 
+
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(cartProduct);
+  const userName = useAppSelector(user);
+
+
   const onSubmit: SubmitHandler<InputType> = (data) => {
-    console.log(data);
-    const cleanOrderItems = cartItems.map((items) => ({
-      id: items.id,
-      name: items.name,
-      image: items.image,
-      price: items.price,
-      mainColor: items.mainColor,
-      size: items.size,
-      discount: items.discount,
+
+    const cleanOrderItems = cartItems.map(
+      ({id, name, image, price, mainColor, size, discount}) => ({
+       id,name,image,price,mainColor,size,discount
     }));
+
     const newOrder = {
       orderItems: cleanOrderItems,
     };
+
     dispatch(addOrder(newOrder));
     reset();
     dispatch(clearCart());
     setShow(true);
   };
-  const userName = useAppSelector(user);
+
 
   return (
     <motion.div

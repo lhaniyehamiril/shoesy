@@ -22,6 +22,7 @@ const ButtonQuantity = tw.button`
   px-2
   font-bold
 `;
+
 export const Quantity: React.FC<QuantityProps> = ({
   flexDir,
   setSelectedQuantity,
@@ -31,26 +32,34 @@ export const Quantity: React.FC<QuantityProps> = ({
   productId,
 }) => {
   const dispatch = useAppDispatch();
+
   const reduxQuantity = useAppSelector((state) =>
     productId ? selectedQuantityById(state, productId) : 0
   );
 
   const currentQuantity = productId ? reduxQuantity : selectedQuantity ?? 1;
+
   const handleIncrement = () => {
+
     const newQuantity = currentQuantity + 1;
     if (productId) {
       dispatch(updateQuantity({ productId, selectedQuantity: newQuantity }));
     } else if (setSelectedQuantity) {
       setSelectedQuantity((prev: number) => prev + 1);
     }
+
   };
+
+
   const handleDecrement = () => {
+
     const newQuantity = currentQuantity <= 1 ? 1 : currentQuantity - 1;
     if (productId) {
       dispatch(updateQuantity({ productId, selectedQuantity: newQuantity }));
     } else if (setSelectedQuantity) {
       setSelectedQuantity((prev: number) => (prev <= 1 ? 1 : prev - 1));
     }
+    
   };
 
   return (

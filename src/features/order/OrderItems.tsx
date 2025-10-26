@@ -1,7 +1,7 @@
 import { dataCart } from "../cart/CartSlice";
 
-import { ImgWithLoader } from "../../ui/ImgWithLoader";
-import { Discount } from "../../ui/Discount";
+import { ImgWithLoader } from "../../components/ImgWithLoader";
+import { Discount } from "../../components/Discount";
 
 type OrderItemsProps = {
   items: dataCart;

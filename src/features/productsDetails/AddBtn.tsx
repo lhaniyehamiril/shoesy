@@ -4,8 +4,8 @@ import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
 
 import { LoginForm } from "../auth/LoginForm";
-import { Modal } from "../../ui/Modal";
-import { Button } from "../../ui/Button";
+import { Modal } from "../../components/Modal";
+import { Button } from "../../components/buttons/Button";
 
 type AddBtnProps = {
   handleCart: () => void;

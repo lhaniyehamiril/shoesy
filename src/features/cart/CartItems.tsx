@@ -1,8 +1,8 @@
 import { dataCart } from "./CartSlice";
 
-import { ImgWithLoader } from "../../ui/ImgWithLoader";
+import { ImgWithLoader } from "../../components/ImgWithLoader";
 import { Quantity } from "../productsDetails/Quantity";
-import { Discount } from "../../ui/Discount";
+import { Discount } from "../../components/Discount";
 import { IconTrash } from "../../icons/IconTrash";
 
 type CartItemsProps = {

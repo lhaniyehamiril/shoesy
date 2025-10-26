@@ -6,12 +6,15 @@ import { login } from "./authSlice";
 type LoginFormProps = {
   closeModel: () => void;
 };
+
 export const LoginForm: React.FC<LoginFormProps> = ({ closeModel }) => {
   const [userName, setUserName] = useState("");
   const dispatch = useAppDispatch();
+   
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (userName !== "" && userName.length < 5) return;
+    if (userName.trim().length < 5 ) return;
 
     if (userName.trim()) {
       dispatch(login(userName));
@@ -19,6 +22,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModel }) => {
       closeModel();
     }
   };
+
+   const errorMessage = userName.trim().length > 1 && userName.length < 5 ?
+   'please enter at least 5 characters' : ''
 
   return (
     <div>
@@ -37,13 +43,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModel }) => {
           save
         </button>
       </form>
-      {userName !== "" && userName.length > 1 && userName.length < 5 ? (
-        <span className="text-red-600 text-[12px] pl-3">
-          please enter at least 5 characters
-        </span>
-      ) : (
-        ""
-      )}
+        {errorMessage && <span className="text-red-600 text-[12px] pl-3">{errorMessage}</span>}
     </div>
   );
 };

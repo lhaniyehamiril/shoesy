@@ -7,12 +7,13 @@ import { useAppDispatch } from "../../hooks/useAppDispatch";
 
 import { user } from "../auth/authSlice";
 import { setProductId } from "./productShoesSlice";
-import { useProductRef } from "../../contexts/ProductRefProvider";
+import { useProductRef } from "../../context/ProductRefProvider";
 import { useDeleteShoes } from "./useDeleteShoes";
 
-import { ImgWithLoader } from "../../ui/ImgWithLoader";
-import { FavoriteBtn } from "../../ui/FavoriteBtn";
+import { ImgWithLoader } from "../../components/ImgWithLoader";
+import { FavoriteBtn } from "../../components/buttons/FavoriteBtn";
 import { IconTrash } from "../../icons/IconTrash";
+import { toast } from "sonner";
 
 type ProductProps = {
   items: dataShoes;
@@ -35,8 +36,8 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
 
   const handleRemove = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
     mutate(items.id);
+    toast.success('product removed')
   };
 
   return (
@@ -53,7 +54,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
         {owner === "im shoesy" && (
           <button
             type="button"
-            className="font-bold text-white cursor-pointer -translate-y-[6.6px]"
+            className="font-bold text-white cursor-pointer -translate-y-[6.7px]"
             onClick={handleRemove}
           >
             <IconTrash strokeColor="#d2a4ff" />
@@ -70,7 +71,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
         </div>
         <div
           className={`flex items-center justify-center flex-col ${
-            owner === "haniyeh" && "-mt-5"
+            owner === "im shoesy" && "-mt-7"
           }`}
         >
           <Link to={`/product/${items.id}`} className="min-[1190px]:hidden">
@@ -80,7 +81,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
               className="w-26 h-26"
             />
           </Link>
-          <button
+          <div role="button"
             onClick={() => dispatch(setProductId(items.id))}
             className="hidden min-[1190px]:block"
           >
@@ -89,7 +90,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
               alt={items.name}
               className="w-32 h-32"
             />
-          </button>
+          </div>
         </div>
         <h2 className="text-white translate-y-2  md:px-2  whitespace-nowrap rounded-full text-[13px] md:text-[1rem]">
           {items.name}
@@ -103,7 +104,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
         }`}
       >
         <span className="text-[13px] md:text-[0.86rem]">${items.price}</span>
-        {items.discount > 0 ? (
+        {items.discount > 0 &&
           <motion.div
             initial={{ opacity: 0, x: 6 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -115,10 +116,7 @@ export const ProductItems: React.FC<ProductProps> = ({ items }) => {
             className="flex items-center justify-center font-bold text-[10px] w-8 h-5 rounded-full bg-[var(--color-purple)] text-[var(--color-gray-primary)]"
           >
             <span> {items.discount}%</span>
-          </motion.div>
-        ) : (
-          ""
-        )}
+          </motion.div>}
       </div>
     </motion.li>
   );

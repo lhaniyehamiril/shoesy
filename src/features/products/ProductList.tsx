@@ -4,9 +4,9 @@ import { useGetDataShoes } from "../../hooks/useGetDataShoes";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { brands } from "./productShoesSlice";
 
-import { Spinner } from "../../ui/Spinner";
+import { Spinner } from "../../components/Spinner";
 import { ProductItems } from "./ProductItems";
-import { Error } from "../../ui/Error";
+import { Error } from "../../components/Error";
 
 export const ProductList = () => {
   const { shoes, errorShoes, loadingShoes } = useGetDataShoes();

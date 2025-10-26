@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { variantScale } from "../ui/variantMotion";
-export const IconCheckMark = () => {
+export  const IconCheckMark = () => {
   return (
     <motion.svg
       className="z-50"
@@ -34,3 +34,4 @@ export const IconCheckMark = () => {
     </motion.svg>
   );
 };
+

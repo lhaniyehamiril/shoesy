@@ -1,6 +1,6 @@
-import { useAppNavigate } from "../hooks/useAppNavigate";
-import { StyleButton } from "./typeButton";
-import { IconBack } from "../icons/IconBack";
+import { useAppNavigate } from "../../hooks/useAppNavigate";
+import { StyleButton } from "../../ui/typeButton";
+import { IconBack } from "../../icons/IconBack";
 type NavigateBtnProps = {
   color: string;
 };

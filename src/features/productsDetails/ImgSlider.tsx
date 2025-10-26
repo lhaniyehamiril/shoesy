@@ -1,7 +1,7 @@
 import { useState } from "react";
 import tw from "tailwind-styled-components";
 import { dataShoes } from "../../services/type";
-import { ImgWithLoader } from "../../ui/ImgWithLoader";
+import { ImgWithLoader } from "../../components/ImgWithLoader";
 
 type SlideImageProps = {
   product: dataShoes | undefined;

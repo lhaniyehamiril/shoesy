@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import App from "./App.tsx";
 import "./index.css";
 import { store } from "./store/store.ts";
+import { BrowserRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,9 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <BrowserRouter>
+         <App />
+        </BrowserRouter>
       </QueryClientProvider>
     </Provider>
   </StrictMode>

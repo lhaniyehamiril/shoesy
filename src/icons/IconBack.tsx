@@ -19,3 +19,4 @@ export const IconBack: React.FC<StyleProps> = ({ color }) => {
     </svg>
   );
 };
+

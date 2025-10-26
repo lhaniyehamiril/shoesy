@@ -7,6 +7,7 @@ import { Exit } from "../../icons/Exit";
 
 export const Logout = () => {
   const dispatch = useAppDispatch();
+  
   const handleLogOut = () => {
     dispatch(logout());
     dispatch(clearFavorite());

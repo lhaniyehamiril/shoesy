@@ -46,7 +46,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setShow }) => {
   const userName = useAppSelector(user);
 
 
-  const onSubmit: SubmitHandler<InputType> = (data) => {
+  const onSubmit: SubmitHandler<InputType> = () => {
 
     const cleanOrderItems = cartItems.map(
       ({id, name, image, price, mainColor, size, discount}) => ({

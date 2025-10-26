@@ -1,4 +1,12 @@
 import { createContext, ReactNode, useContext } from "react";
+import { dataShoes } from "../../../services/type";
+import {
+  UseFormHandleSubmit,
+  UseFormRegister,
+  UseFormReset,
+  FieldErrors,
+  useForm,
+} from "react-hook-form";
 
 type productFormType = {
   register: UseFormRegister<dataShoes>;
@@ -7,14 +15,10 @@ type productFormType = {
   errors: FieldErrors<dataShoes>;  
 };
 
-import {
-  UseFormHandleSubmit,
-  UseFormRegister,
-  UseFormReset,
-  FieldErrors,
-  useForm,
-} from "react-hook-form";
-import { dataShoes } from "../services/type";
+
+
+
+
 const ProductFormContext = createContext<productFormType | undefined>(
   undefined
 );

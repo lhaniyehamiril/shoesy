@@ -2,10 +2,6 @@
 
 A responsive shoe store built with React, TypeScript, and modern frontend tools _(no backend)_.
 
-## live demo
-
-🔗 [shoesy](https://shoesy.vercel.app/)
-
 ## ✨ Features
 
 - **Animated UI** – Smooth transitions with Framer Motion
